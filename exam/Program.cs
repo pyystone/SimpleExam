@@ -1,4 +1,6 @@
-﻿using System;
+﻿using exam.DB;
+using exam.MyForm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,10 +20,8 @@ namespace exam
             Application.SetCompatibleTextRenderingDefault(false);
             InitAPP();
 
-
-            Application.Run(new Form1());
-
-           
+            Application.Run(new MainForm());
+            
         }
 
         static void InitAPP()
@@ -31,7 +31,7 @@ namespace exam
 
         static void InitDB()
         {
-
+            DBManager.InitDB();
         }
     }
 }

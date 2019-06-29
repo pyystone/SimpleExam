@@ -16,7 +16,7 @@ namespace exam.DB
     {
 
         //数据库连接字符串(web.config来配置)，可以动态更改SQLString支持多数据库.
-        public static string DB_NAME = "exam.db";
+        public static string DB_NAME = ".\\exam.db";
 
         public static string connectionString = "Data Source="+ DB_NAME + ";Version=3;";
         public SQLiteHelper() { }
@@ -30,7 +30,7 @@ namespace exam.DB
                 {
                     command.CommandText = "CREATE TABLE DB_VERSION(version integer)";
                     command.ExecuteNonQuery();
-                    command.CommandText = "INSERT INTO DB_VERISON VALUES(1)";
+                    command.CommandText = "insert into DB_VERSION VALUES(1)";
                     command.ExecuteNonQuery();
                 }
             }

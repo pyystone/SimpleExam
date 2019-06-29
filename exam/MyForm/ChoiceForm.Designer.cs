@@ -1,0 +1,146 @@
+﻿namespace exam.MyForm
+{
+    partial class ChoiceForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.content = new System.Windows.Forms.Label();
+            this.aska = new System.Windows.Forms.RadioButton();
+            this.askb = new System.Windows.Forms.RadioButton();
+            this.askc = new System.Windows.Forms.RadioButton();
+            this.askd = new System.Windows.Forms.RadioButton();
+            this.errorLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // content
+            // 
+            this.content.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.content.Location = new System.Drawing.Point(43, 18);
+            this.content.Name = "content";
+            this.content.Size = new System.Drawing.Size(587, 180);
+            this.content.TabIndex = 0;
+            this.content.Text = "label1";
+            // 
+            // aska
+            // 
+            this.aska.AutoSize = true;
+            this.aska.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.aska.Location = new System.Drawing.Point(45, 238);
+            this.aska.Name = "aska";
+            this.aska.Size = new System.Drawing.Size(122, 20);
+            this.aska.TabIndex = 1;
+            this.aska.TabStop = true;
+            this.aska.Text = "radioButton1";
+            this.aska.UseVisualStyleBackColor = true;
+            // 
+            // askb
+            // 
+            this.askb.AutoSize = true;
+            this.askb.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.askb.Location = new System.Drawing.Point(45, 289);
+            this.askb.Name = "askb";
+            this.askb.Size = new System.Drawing.Size(122, 20);
+            this.askb.TabIndex = 2;
+            this.askb.TabStop = true;
+            this.askb.Text = "radioButton2";
+            this.askb.UseVisualStyleBackColor = true;
+            // 
+            // askc
+            // 
+            this.askc.AutoSize = true;
+            this.askc.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.askc.Location = new System.Drawing.Point(45, 346);
+            this.askc.Name = "askc";
+            this.askc.Size = new System.Drawing.Size(122, 20);
+            this.askc.TabIndex = 3;
+            this.askc.TabStop = true;
+            this.askc.Text = "radioButton3";
+            this.askc.UseVisualStyleBackColor = true;
+            // 
+            // askd
+            // 
+            this.askd.AutoSize = true;
+            this.askd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.askd.Location = new System.Drawing.Point(45, 400);
+            this.askd.Name = "askd";
+            this.askd.Size = new System.Drawing.Size(122, 20);
+            this.askd.TabIndex = 4;
+            this.askd.TabStop = true;
+            this.askd.Text = "radioButton4";
+            this.askd.UseVisualStyleBackColor = true;
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(636, 31);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(129, 87);
+            this.errorLabel.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(639, 149);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 49);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "提交（正确进去下一题）";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ChoiceForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(778, 479);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.askd);
+            this.Controls.Add(this.askc);
+            this.Controls.Add(this.askb);
+            this.Controls.Add(this.aska);
+            this.Controls.Add(this.content);
+            this.Name = "ChoiceForm";
+            this.Text = "Form2";
+            this.Load += new System.EventHandler(this.ChoiceForm_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label content;
+        private System.Windows.Forms.RadioButton aska;
+        private System.Windows.Forms.RadioButton askb;
+        private System.Windows.Forms.RadioButton askc;
+        private System.Windows.Forms.RadioButton askd;
+        private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Button button1;
+    }
+}
