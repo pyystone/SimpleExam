@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChoiceForm));
             this.content = new System.Windows.Forms.Label();
             this.aska = new System.Windows.Forms.RadioButton();
             this.askb = new System.Windows.Forms.RadioButton();
@@ -133,6 +134,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(778, 479);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.errorLabel);
@@ -141,6 +143,7 @@
             this.Controls.Add(this.askb);
             this.Controls.Add(this.aska);
             this.Controls.Add(this.content);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChoiceForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.ChoiceForm_Load);

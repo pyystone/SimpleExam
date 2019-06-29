@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProblemListForm));
             this.problemListView = new System.Windows.Forms.ListView();
             this.problemtype = new System.Windows.Forms.ComboBox();
             this.type = new System.Windows.Forms.ComboBox();
@@ -36,6 +37,7 @@
             // 
             // problemListView
             // 
+            this.problemListView.BackColor = System.Drawing.Color.LightGreen;
             this.problemListView.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.problemListView.FullRowSelect = true;
             this.problemListView.GridLines = true;
@@ -78,11 +80,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(1557, 847);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.type);
             this.Controls.Add(this.problemtype);
             this.Controls.Add(this.problemListView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProblemListForm";
             this.Text = "ProblemListForm";
             this.Load += new System.EventHandler(this.ProblemListForm_Load);

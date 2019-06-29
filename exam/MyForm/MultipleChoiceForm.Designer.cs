@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MultipleChoiceForm));
             this.button1 = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
             this.content = new System.Windows.Forms.Label();
@@ -128,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(947, 579);
             this.Controls.Add(this.askd);
             this.Controls.Add(this.askc);
@@ -136,6 +138,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.content);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MultipleChoiceForm";
             this.Text = "MultipleChoiceForm";
             this.Load += new System.EventHandler(this.MultipleChoiceForm_Load);
