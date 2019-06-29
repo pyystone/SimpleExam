@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("exam")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("简易做题系统")]
+[assembly: AssemblyDescription("就是一个非常非常简单的做题系统")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("exam")]
+[assembly: AssemblyCompany("pyystone")]
+[assembly: AssemblyProduct("简易做题系统")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
