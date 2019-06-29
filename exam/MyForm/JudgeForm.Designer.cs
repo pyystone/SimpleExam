@@ -37,7 +37,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(711, 202);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.Location = new System.Drawing.Point(772, 323);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 46);
             this.button1.TabIndex = 20;
@@ -47,28 +48,35 @@
             // 
             // errorLabel
             // 
+            this.errorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.errorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.errorLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(708, 79);
+            this.errorLabel.Location = new System.Drawing.Point(745, 26);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(133, 83);
             this.errorLabel.TabIndex = 19;
             // 
             // content
             // 
+            this.content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.content.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.content.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.content.Location = new System.Drawing.Point(54, 79);
+            this.content.Location = new System.Drawing.Point(12, 26);
             this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(587, 180);
+            this.content.Size = new System.Drawing.Size(727, 551);
             this.content.TabIndex = 18;
-            this.content.Text = "label1";
+            this.content.Text = "没有题目";
             // 
             // right
             // 
+            this.right.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.right.AutoSize = true;
             this.right.Cursor = System.Windows.Forms.Cursors.Default;
             this.right.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.right.Location = new System.Drawing.Point(129, 316);
+            this.right.Location = new System.Drawing.Point(820, 171);
             this.right.Name = "right";
             this.right.Size = new System.Drawing.Size(58, 20);
             this.right.TabIndex = 21;
@@ -78,10 +86,11 @@
             // 
             // wrong
             // 
+            this.wrong.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.wrong.AutoSize = true;
             this.wrong.Cursor = System.Windows.Forms.Cursors.Default;
             this.wrong.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.wrong.Location = new System.Drawing.Point(456, 316);
+            this.wrong.Location = new System.Drawing.Point(820, 232);
             this.wrong.Name = "wrong";
             this.wrong.Size = new System.Drawing.Size(58, 20);
             this.wrong.TabIndex = 22;
@@ -100,7 +109,7 @@
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.content);
             this.Name = "JudgeForm";
-            this.Text = "JudgeForm";
+            this.Text = "判断题";
             this.Load += new System.EventHandler(this.JudgeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

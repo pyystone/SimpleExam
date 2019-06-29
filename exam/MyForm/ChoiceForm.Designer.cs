@@ -39,63 +39,77 @@
             // 
             // content
             // 
+            this.content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.content.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.content.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.content.Location = new System.Drawing.Point(43, 18);
+            this.content.Location = new System.Drawing.Point(12, 18);
             this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(587, 180);
+            this.content.Size = new System.Drawing.Size(587, 195);
             this.content.TabIndex = 0;
-            this.content.Text = "label1";
+            this.content.Text = "没有题目";
             // 
             // aska
             // 
+            this.aska.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aska.AutoSize = true;
             this.aska.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.aska.Location = new System.Drawing.Point(45, 238);
+            this.aska.Location = new System.Drawing.Point(12, 253);
             this.aska.Name = "aska";
-            this.aska.Size = new System.Drawing.Size(122, 20);
+            this.aska.Size = new System.Drawing.Size(90, 20);
             this.aska.TabIndex = 1;
             this.aska.TabStop = true;
-            this.aska.Text = "radioButton1";
+            this.aska.Text = "没有题目";
             this.aska.UseVisualStyleBackColor = true;
             // 
             // askb
             // 
+            this.askb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.askb.AutoSize = true;
             this.askb.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askb.Location = new System.Drawing.Point(45, 289);
+            this.askb.Location = new System.Drawing.Point(12, 315);
             this.askb.Name = "askb";
-            this.askb.Size = new System.Drawing.Size(122, 20);
+            this.askb.Size = new System.Drawing.Size(90, 20);
             this.askb.TabIndex = 2;
             this.askb.TabStop = true;
-            this.askb.Text = "radioButton2";
+            this.askb.Text = "没有题目";
             this.askb.UseVisualStyleBackColor = true;
             // 
             // askc
             // 
+            this.askc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.askc.AutoSize = true;
             this.askc.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askc.Location = new System.Drawing.Point(45, 346);
+            this.askc.Location = new System.Drawing.Point(12, 372);
             this.askc.Name = "askc";
-            this.askc.Size = new System.Drawing.Size(122, 20);
+            this.askc.Size = new System.Drawing.Size(90, 20);
             this.askc.TabIndex = 3;
             this.askc.TabStop = true;
-            this.askc.Text = "radioButton3";
+            this.askc.Text = "没有题目";
             this.askc.UseVisualStyleBackColor = true;
             // 
             // askd
             // 
+            this.askd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.askd.AutoSize = true;
             this.askd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askd.Location = new System.Drawing.Point(45, 400);
+            this.askd.Location = new System.Drawing.Point(12, 428);
             this.askd.Name = "askd";
-            this.askd.Size = new System.Drawing.Size(122, 20);
+            this.askd.Size = new System.Drawing.Size(90, 20);
             this.askd.TabIndex = 4;
             this.askd.TabStop = true;
-            this.askd.Text = "radioButton4";
+            this.askd.Text = "没有题目";
             this.askd.UseVisualStyleBackColor = true;
             // 
             // errorLabel
             // 
+            this.errorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.errorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.errorLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
             this.errorLabel.Location = new System.Drawing.Point(636, 31);
@@ -105,6 +119,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button1.Location = new System.Drawing.Point(639, 149);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 49);
@@ -117,6 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(778, 479);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.errorLabel);

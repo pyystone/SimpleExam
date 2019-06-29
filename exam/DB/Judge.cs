@@ -49,5 +49,30 @@ namespace exam.DB
             }
             return list;
         }
+        public static List<Judge> LoadAllMultipleChoice(long typeId)
+        {
+            List<Judge> list = new List<Judge>();
+            string sql = String.Format("select * from {0} as a left join {1} as b on a.typeid = b.id ", TABLE_NAME, ProblemType.TABLE_NAME);
+            if (typeId != -1)
+            {
+                sql += " where typeid = " + typeId;
+            }
+            DataSet ds = SQLiteHelper.Query(sql);
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                Judge item = new Judge
+                {
+                    id = (long)ds.Tables[0].Rows[i].ItemArray[0],
+                    content = (string)ds.Tables[0].Rows[i].ItemArray[1],
+                    ans = (long)ds.Tables[0].Rows[i].ItemArray[2],
+                    typeId = (long)ds.Tables[0].Rows[i].ItemArray[3],
+                    isDone = (long)ds.Tables[0].Rows[i].ItemArray[4],
+                    typeName = (string)ds.Tables[0].Rows[i].ItemArray[6]
+                };
+                list.Add(item);
+            }
+            return list;
+        }
+
     }
 }

@@ -33,11 +33,23 @@ namespace exam.MyForm
         public void SetExamType(long type)
         {
             examType = type;
-            UpdateData();
         } 
 
         private void UpdateUI()
         {
+            switch (examType)
+            {
+                case QuestionHistory.EXAM_TYPE_UNDO:
+                    this.Text = "选择题训练 - 训练模式（全部是没做过的题目及部分做错的题目）";
+                    break;
+                case QuestionHistory.EXAM_TYPE_WRONG:
+                    this.Text = "选择题训练 - 错题模式（全部是做错的题目）";
+                    break;
+                case QuestionHistory.EXAM_TYPE_REVIEW:
+                    this.Text = "选择题训练 - 复习模式（全部是做过的题）";
+                    break;
+            }
+
             if (list.Count == 0)
             {
                 return;
@@ -58,6 +70,7 @@ namespace exam.MyForm
             askd.Checked = false;
 
             choice = list[index];
+
         }
 
         private void UpdateData()
@@ -148,6 +161,12 @@ namespace exam.MyForm
         private long button_state = 0;
         private void button1_Click(object sender, EventArgs e)
         {
+            if (list.Count == 0)
+            {
+                MessageBox.Show("没有题目了，请添加题目！");
+                return;
+            }
+
             if (button_state == 1)
             {
                 errorLabel.Text = "";

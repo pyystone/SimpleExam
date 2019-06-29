@@ -39,7 +39,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(734, 174);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(801, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 47);
             this.button1.TabIndex = 13;
@@ -49,64 +50,78 @@
             // 
             // errorLabel
             // 
+            this.errorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.errorLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.errorLabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(711, 52);
+            this.errorLabel.Location = new System.Drawing.Point(766, 18);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(157, 92);
             this.errorLabel.TabIndex = 12;
             // 
             // content
             // 
+            this.content.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.content.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.content.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.content.Location = new System.Drawing.Point(57, 52);
+            this.content.Location = new System.Drawing.Point(12, 18);
             this.content.Name = "content";
-            this.content.Size = new System.Drawing.Size(587, 180);
+            this.content.Size = new System.Drawing.Size(733, 254);
             this.content.TabIndex = 7;
-            this.content.Text = "label1";
+            this.content.Text = "没有题目";
             // 
             // aska
             // 
+            this.aska.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.aska.AutoSize = true;
             this.aska.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.aska.Location = new System.Drawing.Point(59, 277);
+            this.aska.Location = new System.Drawing.Point(12, 311);
             this.aska.Name = "aska";
-            this.aska.Size = new System.Drawing.Size(99, 20);
+            this.aska.Size = new System.Drawing.Size(91, 20);
             this.aska.TabIndex = 14;
-            this.aska.Text = "checkBox1";
+            this.aska.Text = "没有题目";
             this.aska.UseVisualStyleBackColor = true;
             // 
             // askb
             // 
+            this.askb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.askb.AutoSize = true;
             this.askb.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askb.Location = new System.Drawing.Point(59, 337);
+            this.askb.Location = new System.Drawing.Point(12, 371);
             this.askb.Name = "askb";
-            this.askb.Size = new System.Drawing.Size(99, 20);
+            this.askb.Size = new System.Drawing.Size(91, 20);
             this.askb.TabIndex = 15;
-            this.askb.Text = "checkBox2";
+            this.askb.Text = "没有题目";
             this.askb.UseVisualStyleBackColor = true;
             // 
             // askc
             // 
+            this.askc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.askc.AutoSize = true;
             this.askc.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askc.Location = new System.Drawing.Point(59, 397);
+            this.askc.Location = new System.Drawing.Point(12, 431);
             this.askc.Name = "askc";
-            this.askc.Size = new System.Drawing.Size(99, 20);
+            this.askc.Size = new System.Drawing.Size(91, 20);
             this.askc.TabIndex = 16;
-            this.askc.Text = "checkBox3";
+            this.askc.Text = "没有题目";
             this.askc.UseVisualStyleBackColor = true;
             // 
             // askd
             // 
+            this.askd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.askd.AutoSize = true;
             this.askd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askd.Location = new System.Drawing.Point(59, 461);
+            this.askd.Location = new System.Drawing.Point(12, 495);
             this.askd.Name = "askd";
-            this.askd.Size = new System.Drawing.Size(99, 20);
+            this.askd.Size = new System.Drawing.Size(91, 20);
             this.askd.TabIndex = 17;
-            this.askd.Text = "checkBox4";
+            this.askd.Text = "没有题目";
             this.askd.UseVisualStyleBackColor = true;
             // 
             // MultipleChoiceForm

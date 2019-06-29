@@ -23,7 +23,6 @@ namespace exam.MyForm
         {
             InitializeComponent();
             this.IsMdiContainer = true;
-
         }
 
         private void 导入单选题ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,14 +85,12 @@ namespace exam.MyForm
                     {
                         if (this.ActiveMdiChild != null)
                         {
-                            this.ActiveMdiChild.Hide();
+                            this.ActiveMdiChild.Close();
                         }
                     }
                     this.currentForm = frm;
                     frm.TopLevel = false;
                     frm.MdiParent = this;
-                    panel1.Controls.Clear();
-                    panel1.Controls.Add(frm);
                     frm.Show();
                     frm.Dock = System.Windows.Forms.DockStyle.Fill;
                     this.Refresh();
@@ -113,9 +110,6 @@ namespace exam.MyForm
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-
-
-            
         }
 
         private void 单选ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,10 +117,10 @@ namespace exam.MyForm
             choiceForm = new ChoiceForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             choiceForm.SetExamType(QuestionHistory.EXAM_TYPE_UNDO);
-            ShowForm(panel1, choiceForm);
+            choiceForm.Show();
         }
 
         private void 多选ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,10 +128,10 @@ namespace exam.MyForm
             multipleChoiceForm = new MultipleChoiceForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             multipleChoiceForm.SetExamType(QuestionHistory.EXAM_TYPE_UNDO);
-            ShowForm(panel1, multipleChoiceForm);
+            multipleChoiceForm.Show();
         }
 
         private void 判断ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,10 +139,10 @@ namespace exam.MyForm
             judgeForm = new JudgeForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             judgeForm.SetExamType(QuestionHistory.EXAM_TYPE_UNDO);
-            ShowForm(panel1, judgeForm);
+            judgeForm.Show();
         }
 
         private void 版本信息ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,10 +157,10 @@ namespace exam.MyForm
             choiceForm = new ChoiceForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             choiceForm.SetExamType(QuestionHistory.EXAM_TYPE_WRONG);
-            ShowForm(panel1, choiceForm);
+            choiceForm.Show();
         }
 
         private void 多选ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -175,10 +169,10 @@ namespace exam.MyForm
             multipleChoiceForm = new MultipleChoiceForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             multipleChoiceForm.SetExamType(QuestionHistory.EXAM_TYPE_WRONG);
-            ShowForm(panel1, multipleChoiceForm);
+            multipleChoiceForm.Show();
         }
 
         private void 判断ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -187,10 +181,10 @@ namespace exam.MyForm
             judgeForm = new JudgeForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             judgeForm.SetExamType(QuestionHistory.EXAM_TYPE_WRONG);
-            ShowForm(panel1, judgeForm);
+            judgeForm.Show();
         }
 
         private void 单选ToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -199,10 +193,10 @@ namespace exam.MyForm
             choiceForm = new ChoiceForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             choiceForm.SetExamType(QuestionHistory.EXAM_TYPE_REVIEW);
-            ShowForm(panel1, choiceForm);
+            choiceForm.Show();
         }
 
         private void 多选ToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -211,10 +205,10 @@ namespace exam.MyForm
             multipleChoiceForm = new MultipleChoiceForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             multipleChoiceForm.SetExamType(QuestionHistory.EXAM_TYPE_REVIEW);
-            ShowForm(panel1, multipleChoiceForm);
+            multipleChoiceForm.Show();
         }
 
         private void 判断ToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -223,21 +217,25 @@ namespace exam.MyForm
             judgeForm = new JudgeForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
             judgeForm.SetExamType(QuestionHistory.EXAM_TYPE_REVIEW);
-            ShowForm(panel1, judgeForm);
+            judgeForm.Show();
         }
 
         private void 查看题库ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             ProblemListForm problemListForm = new ProblemListForm
             {
                 MdiParent = this,
-                Parent = panel1
+                WindowState = FormWindowState.Maximized
             };
-            ShowForm(panel1, problemListForm);
+            problemListForm.Show();
+        }
+
+        private void 开始训练ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

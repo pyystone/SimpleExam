@@ -39,10 +39,24 @@ namespace exam.MyForm
         public void SetExamType(long type)
         {
             examType = type;
+
         }
 
         private void UpdateUI()
         {
+            switch (examType)
+            {
+                case QuestionHistory.EXAM_TYPE_UNDO:
+                    this.Text = "判断题训练 - 训练模式（全部是没做过的题目及部分做错的题目）";
+                    break;
+                case QuestionHistory.EXAM_TYPE_WRONG:
+                    this.Text = "判断题训练 - 错题模式（全部是做错的题目）";
+                    break;
+                case QuestionHistory.EXAM_TYPE_REVIEW:
+                    this.Text = "判断题训练 - 复习模式（全部是做过的题）";
+                    break;
+            }
+
             if (list.Count == 0)
             {
                 return;
@@ -59,18 +73,19 @@ namespace exam.MyForm
 
         private void UpdateData()
         {
-            if (examType == QuestionHistory.EXAM_TYPE_UNDO)
+
+            switch (examType)
             {
-                list.AddRange(Judge.LoadUndoChoice(100));
-                list.AddRange(QuestionHistory.LoadJudge(QuestionHistory.EXAM_TYPE_WRONG, 10));
-            }
-            else if (examType == QuestionHistory.EXAM_TYPE_WRONG)
-            {
-                list.AddRange(QuestionHistory.LoadJudge(QuestionHistory.EXAM_TYPE_WRONG, 100));
-            }
-            else if (examType == QuestionHistory.EXAM_TYPE_REVIEW)
-            {
-                list.AddRange(QuestionHistory.LoadJudge(QuestionHistory.EXAM_TYPE_REVIEW, 100));
+                case QuestionHistory.EXAM_TYPE_UNDO:
+                    list.AddRange(Judge.LoadUndoChoice(100));
+                    list.AddRange(QuestionHistory.LoadJudge(QuestionHistory.EXAM_TYPE_WRONG, 10));
+                    break;
+                case QuestionHistory.EXAM_TYPE_WRONG:
+                    list.AddRange(QuestionHistory.LoadJudge(QuestionHistory.EXAM_TYPE_WRONG, 100));
+                    break;
+                case QuestionHistory.EXAM_TYPE_REVIEW:
+                    list.AddRange(QuestionHistory.LoadJudge(QuestionHistory.EXAM_TYPE_REVIEW, 100));
+                    break;
             }
             list = Util.RandomSortList(list);
             index = 0;
@@ -133,6 +148,11 @@ namespace exam.MyForm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (list.Count == 0)
+            {
+                MessageBox.Show("没有题目了，请添加题目！");
+                return;
+            }
 
             if (button_state == 1)
             {
