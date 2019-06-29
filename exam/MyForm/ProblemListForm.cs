@@ -38,15 +38,15 @@ namespace exam.MyForm
 
         private void problemtype_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch((string)sender)
+            switch(((ComboBox)sender).SelectedIndex)
             {
-                case "单选":
+                case 0:
                     problem_type = QuestionHistory.TYPE_CHOICE;
                     break;
-                case "多选":
+                case 1:
                     problem_type = QuestionHistory.TYPE_MULTIPLECHOICE;
                     break;
-                case "判断":
+                case 2:
                     problem_type = QuestionHistory.TYPE_JUDGE;
                     break;
             }
