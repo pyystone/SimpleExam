@@ -89,6 +89,7 @@
             this.Controls.Add(this.type);
             this.Controls.Add(this.problemtype);
             this.Controls.Add(this.problemListView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProblemListForm";
             this.Text = "ProblemListForm";

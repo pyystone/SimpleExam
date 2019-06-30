@@ -150,6 +150,7 @@
             this.Controls.Add(this.askb);
             this.Controls.Add(this.aska);
             this.Controls.Add(this.content);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChoiceForm";
             this.Text = "Form2";

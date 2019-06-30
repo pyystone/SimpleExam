@@ -113,6 +113,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.content);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "JudgeForm";
             this.Text = "判断题";
