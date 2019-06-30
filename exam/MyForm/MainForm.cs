@@ -71,7 +71,7 @@ namespace exam.MyForm
             }
         }
 
-        public void ShowForm(Panel panel,Form frm)
+        public void ShowForm(Form frm)
         {
             lock(this)
             {

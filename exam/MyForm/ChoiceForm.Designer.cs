@@ -47,6 +47,7 @@
             this.content.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.content.Location = new System.Drawing.Point(12, 18);
             this.content.Name = "content";
+            this.content.Padding = new System.Windows.Forms.Padding(10);
             this.content.Size = new System.Drawing.Size(587, 195);
             this.content.TabIndex = 0;
             this.content.Text = "没有题目";
@@ -57,9 +58,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.aska.AutoSize = true;
             this.aska.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.aska.Location = new System.Drawing.Point(12, 253);
+            this.aska.Location = new System.Drawing.Point(12, 233);
             this.aska.Name = "aska";
-            this.aska.Size = new System.Drawing.Size(90, 20);
+            this.aska.Padding = new System.Windows.Forms.Padding(10);
+            this.aska.Size = new System.Drawing.Size(110, 40);
             this.aska.TabIndex = 1;
             this.aska.TabStop = true;
             this.aska.Text = "没有题目";
@@ -71,9 +73,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.askb.AutoSize = true;
             this.askb.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askb.Location = new System.Drawing.Point(12, 315);
+            this.askb.Location = new System.Drawing.Point(12, 295);
             this.askb.Name = "askb";
-            this.askb.Size = new System.Drawing.Size(90, 20);
+            this.askb.Padding = new System.Windows.Forms.Padding(10);
+            this.askb.Size = new System.Drawing.Size(110, 40);
             this.askb.TabIndex = 2;
             this.askb.TabStop = true;
             this.askb.Text = "没有题目";
@@ -85,9 +88,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.askc.AutoSize = true;
             this.askc.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askc.Location = new System.Drawing.Point(12, 372);
+            this.askc.Location = new System.Drawing.Point(12, 352);
             this.askc.Name = "askc";
-            this.askc.Size = new System.Drawing.Size(90, 20);
+            this.askc.Padding = new System.Windows.Forms.Padding(10);
+            this.askc.Size = new System.Drawing.Size(110, 40);
             this.askc.TabIndex = 3;
             this.askc.TabStop = true;
             this.askc.Text = "没有题目";
@@ -99,9 +103,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.askd.AutoSize = true;
             this.askd.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.askd.Location = new System.Drawing.Point(12, 428);
+            this.askd.Location = new System.Drawing.Point(12, 408);
             this.askd.Name = "askd";
-            this.askd.Size = new System.Drawing.Size(90, 20);
+            this.askd.Padding = new System.Windows.Forms.Padding(10);
+            this.askd.Size = new System.Drawing.Size(110, 40);
             this.askd.TabIndex = 4;
             this.askd.TabStop = true;
             this.askd.Text = "没有题目";
@@ -115,15 +120,17 @@
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
             this.errorLabel.Location = new System.Drawing.Point(636, 31);
             this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Padding = new System.Windows.Forms.Padding(10);
             this.errorLabel.Size = new System.Drawing.Size(129, 87);
             this.errorLabel.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Location = new System.Drawing.Point(639, 149);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(636, 146);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 49);
+            this.button1.Size = new System.Drawing.Size(126, 54);
             this.button1.TabIndex = 6;
             this.button1.Text = "提交（正确进去下一题）";
             this.button1.UseVisualStyleBackColor = true;

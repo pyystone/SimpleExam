@@ -50,25 +50,28 @@
             // 
             // problemtype
             // 
+            this.problemtype.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.problemtype.FormattingEnabled = true;
             this.problemtype.Location = new System.Drawing.Point(49, 25);
             this.problemtype.Name = "problemtype";
-            this.problemtype.Size = new System.Drawing.Size(121, 20);
+            this.problemtype.Size = new System.Drawing.Size(121, 24);
             this.problemtype.TabIndex = 1;
             this.problemtype.SelectedIndexChanged += new System.EventHandler(this.problemtype_SelectedIndexChanged);
             // 
             // type
             // 
+            this.type.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.type.FormattingEnabled = true;
             this.type.Location = new System.Drawing.Point(218, 25);
             this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(121, 20);
+            this.type.Size = new System.Drawing.Size(121, 24);
             this.type.TabIndex = 2;
             this.type.SelectedIndexChanged += new System.EventHandler(this.type_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(401, 21);
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(401, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;

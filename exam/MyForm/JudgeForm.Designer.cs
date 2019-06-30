@@ -38,10 +38,11 @@
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.Location = new System.Drawing.Point(772, 323);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(745, 318);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 46);
+            this.button1.Size = new System.Drawing.Size(133, 51);
             this.button1.TabIndex = 20;
             this.button1.Text = "提交（正确进去下一题）";
             this.button1.UseVisualStyleBackColor = true;
@@ -55,6 +56,7 @@
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
             this.errorLabel.Location = new System.Drawing.Point(745, 26);
             this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Padding = new System.Windows.Forms.Padding(10);
             this.errorLabel.Size = new System.Drawing.Size(133, 83);
             this.errorLabel.TabIndex = 19;
             // 
@@ -67,13 +69,14 @@
             this.content.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.content.Location = new System.Drawing.Point(12, 26);
             this.content.Name = "content";
+            this.content.Padding = new System.Windows.Forms.Padding(10);
             this.content.Size = new System.Drawing.Size(727, 551);
             this.content.TabIndex = 18;
             this.content.Text = "没有题目";
             // 
             // right
             // 
-            this.right.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.right.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.right.AutoSize = true;
             this.right.Cursor = System.Windows.Forms.Cursors.Default;
             this.right.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -87,7 +90,7 @@
             // 
             // wrong
             // 
-            this.wrong.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.wrong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.wrong.AutoSize = true;
             this.wrong.Cursor = System.Windows.Forms.Cursors.Default;
             this.wrong.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
