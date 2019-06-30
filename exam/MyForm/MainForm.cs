@@ -13,11 +13,10 @@ namespace exam.MyForm
 {
     public partial class MainForm : Form
     {
-        private static ChoiceForm choiceForm = null;
-        private static MultipleChoiceForm multipleChoiceForm = null;
-        private static JudgeForm judgeForm = null;
 
         private Form currentForm;
+        private int problemKind = QuestionHistory.TYPE_CHOICE;
+        private int examType = QuestionHistory.EXAM_TYPE_UNDO;
 
         public MainForm()
         {
@@ -71,40 +70,44 @@ namespace exam.MyForm
             }
         }
 
-        public void ShowForm(Form frm)
+        public void ShowForm()
         {
-            lock(this)
+            if (currentForm != null )
             {
-                try
-                {
-                    if (this.currentForm != null && this.currentForm == frm)
-                    {
-                        return;
-                    }
-                    else if (this.currentForm != null)
-                    {
-                        if (this.ActiveMdiChild != null)
-                        {
-                            this.ActiveMdiChild.Close();
-                        }
-                    }
-                    this.currentForm = frm;
-                    frm.TopLevel = false;
-                    frm.MdiParent = this;
-                    frm.Show();
-                    frm.Dock = System.Windows.Forms.DockStyle.Fill;
-                    this.Refresh();
-                    foreach (Control item in frm.Controls)
-                    {
-                        item.Focus();
-                        break;
-                    }
-                }
-                catch(Exception ex)
-                {
-                    Console.Write(ex.Message);
-                }
+                currentForm.Close();
             }
+            switch(problemKind)
+            {
+                case QuestionHistory.TYPE_CHOICE:
+                    currentForm = new ChoiceForm
+                    {
+                        MdiParent = this,
+                        WindowState = FormWindowState.Maximized
+                    };
+                    ((ChoiceForm)currentForm).SetExamType(examType);
+                    currentForm.Show();
+                    break;
+                case QuestionHistory.TYPE_MULTIPLECHOICE:
+                    currentForm = new MultipleChoiceForm
+                    {
+                        MdiParent = this,
+                        WindowState = FormWindowState.Maximized
+                    };
+                    ((MultipleChoiceForm)currentForm).SetExamType(examType);
+                    currentForm.Show();
+                    break;
+                case QuestionHistory.TYPE_JUDGE:
+                    currentForm = new JudgeForm
+                    {
+                        MdiParent = this,
+                        WindowState = FormWindowState.Maximized
+                    };
+                    ((JudgeForm)currentForm).SetExamType(examType);
+                    currentForm.Show();
+                    break;
+            }
+            currentForm.Dock = DockStyle.Fill;
+            this.Refresh();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -114,35 +117,23 @@ namespace exam.MyForm
 
         private void 单选ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            choiceForm = new ChoiceForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            choiceForm.SetExamType(QuestionHistory.EXAM_TYPE_UNDO);
-            choiceForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_UNDO;
+            problemKind = QuestionHistory.TYPE_CHOICE;
+            ShowForm();
         }
 
         private void 多选ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            multipleChoiceForm = new MultipleChoiceForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            multipleChoiceForm.SetExamType(QuestionHistory.EXAM_TYPE_UNDO);
-            multipleChoiceForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_UNDO;
+            problemKind = QuestionHistory.TYPE_MULTIPLECHOICE;
+            ShowForm();
         }
 
         private void 判断ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            judgeForm = new JudgeForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            judgeForm.SetExamType(QuestionHistory.EXAM_TYPE_UNDO);
-            judgeForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_UNDO;
+            problemKind = QuestionHistory.TYPE_JUDGE;
+            ShowForm();
         }
 
         private void 版本信息ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,73 +145,49 @@ namespace exam.MyForm
         private void 单选ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            choiceForm = new ChoiceForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            choiceForm.SetExamType(QuestionHistory.EXAM_TYPE_WRONG);
-            choiceForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_WRONG;
+            problemKind = QuestionHistory.TYPE_CHOICE;
+            ShowForm();
         }
 
         private void 多选ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            multipleChoiceForm = new MultipleChoiceForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            multipleChoiceForm.SetExamType(QuestionHistory.EXAM_TYPE_WRONG);
-            multipleChoiceForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_WRONG;
+            problemKind = QuestionHistory.TYPE_MULTIPLECHOICE;
+            ShowForm();
         }
 
         private void 判断ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            judgeForm = new JudgeForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            judgeForm.SetExamType(QuestionHistory.EXAM_TYPE_WRONG);
-            judgeForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_WRONG;
+            problemKind = QuestionHistory.TYPE_JUDGE;
+            ShowForm();
         }
 
         private void 单选ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
-            choiceForm = new ChoiceForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            choiceForm.SetExamType(QuestionHistory.EXAM_TYPE_REVIEW);
-            choiceForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_REVIEW;
+            problemKind = QuestionHistory.TYPE_CHOICE;
+            ShowForm();
         }
 
         private void 多选ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
-            multipleChoiceForm = new MultipleChoiceForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            multipleChoiceForm.SetExamType(QuestionHistory.EXAM_TYPE_REVIEW);
-            multipleChoiceForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_REVIEW;
+            problemKind = QuestionHistory.TYPE_MULTIPLECHOICE;
+            ShowForm();
         }
 
         private void 判断ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
-            judgeForm = new JudgeForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            judgeForm.SetExamType(QuestionHistory.EXAM_TYPE_REVIEW);
-            judgeForm.Show();
+            examType = QuestionHistory.EXAM_TYPE_REVIEW;
+            problemKind = QuestionHistory.TYPE_JUDGE;
+            ShowForm();
         }
 
         private void 查看题库ToolStripMenuItem_Click(object sender, EventArgs e)
