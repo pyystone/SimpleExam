@@ -12,6 +12,7 @@ namespace exam.MyForm
 {
     public partial class AboutMe : Form
     {
+
         public AboutMe()
         {
             InitializeComponent();
@@ -32,6 +33,13 @@ namespace exam.MyForm
         {
             System.Diagnostics.Process.Start("https://github.com/pyystone/SimpleExam");
         
+        }
+
+        private void AboutMe_Load(object sender, EventArgs e)
+        {
+            string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            appVersion.Text = "软件版本号 v"+ version;
+            updateTime.Text = "pyysotne - 2019/07/01";
         }
     }
 }

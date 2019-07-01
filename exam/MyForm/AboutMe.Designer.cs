@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutMe));
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.appVersion = new System.Windows.Forms.Label();
+            this.updateTime = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,27 +64,27 @@
             this.linkLabel2.Text = "访问我的博客";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // label3
+            // appVersion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(27, 153);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 14);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "软件版本号 v1.1";
+            this.appVersion.AutoSize = true;
+            this.appVersion.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.appVersion.Location = new System.Drawing.Point(27, 153);
+            this.appVersion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.appVersion.Name = "appVersion";
+            this.appVersion.Size = new System.Drawing.Size(112, 14);
+            this.appVersion.TabIndex = 9;
+            this.appVersion.Text = "软件版本号 v1.1";
             // 
-            // label4
+            // updateTime
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(621, 173);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(154, 14);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "pyysotne - 2019/06/28";
+            this.updateTime.AutoSize = true;
+            this.updateTime.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.updateTime.Location = new System.Drawing.Point(621, 173);
+            this.updateTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.updateTime.Name = "updateTime";
+            this.updateTime.Size = new System.Drawing.Size(154, 14);
+            this.updateTime.TabIndex = 8;
+            this.updateTime.Text = "pyysotne - 2019/06/28";
             // 
             // pictureBox2
             // 
@@ -137,14 +137,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.appVersion);
+            this.Controls.Add(this.updateTime);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AboutMe";
             this.Text = "AboutMe";
+            this.Load += new System.EventHandler(this.AboutMe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -155,8 +156,8 @@
 
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label appVersion;
+        private System.Windows.Forms.Label updateTime;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
