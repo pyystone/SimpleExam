@@ -73,7 +73,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 14);
             this.label3.TabIndex = 9;
-            this.label3.Text = "软件版本号 v1.0";
+            this.label3.Text = "软件版本号 v1.1";
             // 
             // label4
             // 
