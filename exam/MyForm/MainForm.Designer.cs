@@ -48,6 +48,7 @@
             this.导入判断题ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看题库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.版本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.做题统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.综合复习ToolStripMenuItem,
             this.导入题库ToolStripMenuItem,
             this.查看题库ToolStripMenuItem,
+            this.做题统计ToolStripMenuItem,
             this.版本信息ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -205,6 +207,13 @@
             this.版本信息ToolStripMenuItem.Text = "版本信息";
             this.版本信息ToolStripMenuItem.Click += new System.EventHandler(this.版本信息ToolStripMenuItem_Click);
             // 
+            // 做题统计ToolStripMenuItem
+            // 
+            this.做题统计ToolStripMenuItem.Name = "做题统计ToolStripMenuItem";
+            this.做题统计ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.做题统计ToolStripMenuItem.Text = "做题统计";
+            this.做题统计ToolStripMenuItem.Click += new System.EventHandler(this.做题统计ToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -244,6 +253,7 @@
         private System.Windows.Forms.ToolStripMenuItem 单选ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 多选ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 判断ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 做题统计ToolStripMenuItem;
     }
 }
 

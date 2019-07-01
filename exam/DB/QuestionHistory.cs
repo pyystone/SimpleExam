@@ -15,6 +15,7 @@ namespace exam.DB
         public const int TYPE_CHOICE = 0;
         public const int TYPE_MULTIPLECHOICE = 1;
         public const int TYPE_JUDGE = 2;
+        public const int TYPE_PROBLEMLIST = 999;
 
         public const int RESULT_WRONG = 0;
         public const int RESULT_RIGHT = 1;

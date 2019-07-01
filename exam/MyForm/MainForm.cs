@@ -15,8 +15,6 @@ namespace exam.MyForm
     {
 
         private Form currentForm;
-        private int problemKind = QuestionHistory.TYPE_CHOICE;
-        private int examType = QuestionHistory.EXAM_TYPE_UNDO;
 
         public MainForm()
         {
@@ -70,7 +68,12 @@ namespace exam.MyForm
             }
         }
 
-        public void ShowForm()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="problemKind"> 题目类型，选择，多选，判断</param>
+        /// <param name="examType">新题，错题，复习</param>
+        public void ShowForm(int problemKind, int examType)
         {
             if (currentForm != null )
             {
@@ -105,6 +108,14 @@ namespace exam.MyForm
                     ((JudgeForm)currentForm).SetExamType(examType);
                     currentForm.Show();
                     break;
+                case QuestionHistory.TYPE_PROBLEMLIST:
+                    currentForm = new ProblemListForm
+                    {
+                        MdiParent = this,
+                        WindowState = FormWindowState.Maximized
+                    };
+                    currentForm.Show();
+                    break;
             }
             currentForm.Dock = DockStyle.Fill;
             this.Refresh();
@@ -117,23 +128,17 @@ namespace exam.MyForm
 
         private void 单选ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            examType = QuestionHistory.EXAM_TYPE_UNDO;
-            problemKind = QuestionHistory.TYPE_CHOICE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_CHOICE,QuestionHistory.EXAM_TYPE_UNDO);
         }
 
         private void 多选ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            examType = QuestionHistory.EXAM_TYPE_UNDO;
-            problemKind = QuestionHistory.TYPE_MULTIPLECHOICE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_MULTIPLECHOICE, QuestionHistory.EXAM_TYPE_UNDO);
         }
 
         private void 判断ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            examType = QuestionHistory.EXAM_TYPE_UNDO;
-            problemKind = QuestionHistory.TYPE_JUDGE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_JUDGE, QuestionHistory.EXAM_TYPE_UNDO);
         }
 
         private void 版本信息ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,62 +150,50 @@ namespace exam.MyForm
         private void 单选ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            examType = QuestionHistory.EXAM_TYPE_WRONG;
-            problemKind = QuestionHistory.TYPE_CHOICE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_CHOICE, QuestionHistory.EXAM_TYPE_WRONG);
         }
 
         private void 多选ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            examType = QuestionHistory.EXAM_TYPE_WRONG;
-            problemKind = QuestionHistory.TYPE_MULTIPLECHOICE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_MULTIPLECHOICE, QuestionHistory.EXAM_TYPE_WRONG);
         }
 
         private void 判断ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
-            examType = QuestionHistory.EXAM_TYPE_WRONG;
-            problemKind = QuestionHistory.TYPE_JUDGE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_JUDGE, QuestionHistory.EXAM_TYPE_WRONG);
         }
 
         private void 单选ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
-            examType = QuestionHistory.EXAM_TYPE_REVIEW;
-            problemKind = QuestionHistory.TYPE_CHOICE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_CHOICE, QuestionHistory.EXAM_TYPE_REVIEW);
         }
 
         private void 多选ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
-            examType = QuestionHistory.EXAM_TYPE_REVIEW;
-            problemKind = QuestionHistory.TYPE_MULTIPLECHOICE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_MULTIPLECHOICE, QuestionHistory.EXAM_TYPE_REVIEW);
         }
 
         private void 判断ToolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
-            examType = QuestionHistory.EXAM_TYPE_REVIEW;
-            problemKind = QuestionHistory.TYPE_JUDGE;
-            ShowForm();
+            ShowForm(QuestionHistory.TYPE_JUDGE, QuestionHistory.EXAM_TYPE_REVIEW);
         }
 
         private void 查看题库ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProblemListForm problemListForm = new ProblemListForm
-            {
-                MdiParent = this,
-                WindowState = FormWindowState.Maximized
-            };
-            problemListForm.Show();
+            ShowForm(QuestionHistory.TYPE_PROBLEMLIST, -1);
         }
 
         private void 开始训练ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 做题统计ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
