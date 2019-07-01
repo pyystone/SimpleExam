@@ -129,11 +129,14 @@ namespace exam.MyForm
             if (userAns.Equals(multipleChoice.ans))
             {
                 QuestionHistory.UpdateHistory(multipleChoice, QuestionHistory.RESULT_RIGHT);
+                MyApp.multipleChoiceCount++;
                 return "";
             }
             else
             {
                 QuestionHistory.UpdateHistory(multipleChoice, QuestionHistory.RESULT_WRONG);
+                MyApp.multipleChoiceCount++;
+                MyApp.multipleChoiceWrongCount++;
                 return "你的选择是" + userAns + "\n\n" + "正确答案为" + multipleChoice.ans;
             }
         }

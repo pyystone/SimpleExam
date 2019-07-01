@@ -111,11 +111,14 @@ namespace exam.MyForm
             if (userAns == judge.ans)
             {
                 QuestionHistory.UpdateHistory(judge, QuestionHistory.RESULT_RIGHT);
+                MyApp.judgeCount++;
                 return "";
             }
             else
             {
                 QuestionHistory.UpdateHistory(judge, QuestionHistory.RESULT_WRONG);
+                MyApp.judgeCount++;
+                MyApp.judgeWrongCount++;
                 return "你的选择是" + TranslateAns(userAns) + "\n\n" + "正确答案为" + TranslateAns(judge.ans);
             }
         }

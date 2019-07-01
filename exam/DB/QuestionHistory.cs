@@ -326,14 +326,30 @@ namespace exam.DB
         /// </summary>
         /// <param name="type">题目类型，-1 表示所有</param>
         /// <returns></returns>
-        public static int GetHisotryCount(int type)
+        public static long GetHisotryCount(int type)
         {
             string sql = String.Format("select count(number) from {0}", TABLE_NAME);
             if (type != -1)
             {
-                sql += String.Format("{0} where type = {1}", sql, type);
+                sql += String.Format(" where type = {0}", type);
             }
-            int count = (int)SQLiteHelper.GetSingle(sql);
+            long count = (long)SQLiteHelper.GetSingle(sql);
+            return count;
+        }
+
+        /// <summary>
+        /// 获得做题数
+        /// </summary>
+        /// <param name="type">题目类型，-1 表示所有</param>
+        /// <returns></returns>
+        public static long GetWrongHisotryCount(int type)
+        {
+            string sql = String.Format("select count(error_times) from {0}", TABLE_NAME);
+            if (type != -1)
+            {
+                sql += String.Format(" where type = {0}", type);
+            }
+            long count = (long)SQLiteHelper.GetSingle(sql);
             return count;
         }
     }

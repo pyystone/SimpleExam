@@ -116,6 +116,7 @@
     <Compile Include="DB\Judge.cs" />
     <Compile Include="DB\MultipleChoice.cs" />
     <Compile Include="DB\SQLiteHelper.cs" />
+    <Compile Include="MyApp.cs" />
     <Compile Include="MyForm\AboutMe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +153,12 @@
     <Compile Include="MyForm\ProblemListForm.Designer.cs">
       <DependentUpon>ProblemListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyForm\StatisticsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\StatisticsForm.Designer.cs">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tools\Util.cs" />
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm\ProblemListForm.resx">
       <DependentUpon>ProblemListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\StatisticsForm.resx">
+      <DependentUpon>StatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

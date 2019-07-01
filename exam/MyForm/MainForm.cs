@@ -15,6 +15,8 @@ namespace exam.MyForm
     {
 
         private Form currentForm;
+        private StatisticsForm statisticsForm;
+        private AboutMe aboutMeForm;
 
         public MainForm()
         {
@@ -25,10 +27,12 @@ namespace exam.MyForm
         private void 导入单选题ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Multiselect = false;
-            dialog.Title = "请选择题库文件";
-            dialog.Filter = "所有文件(*.*)|*.*";
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Multiselect = false,
+                Title = "请选择题库文件",
+                Filter = "97-2003excel文件(*.xls)|*.xls"
+            };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 string name = dialog.FileName;
@@ -40,10 +44,12 @@ namespace exam.MyForm
 
         private void 导入多选题ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Multiselect = false;
-            dialog.Title = "请选择题库文件";
-            dialog.Filter = "所有文件(*.*)|*.*";
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Multiselect = false,
+                Title = "请选择题库文件",
+                Filter = "97-2003excel文件(*.xls)|*.xls"
+            };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 string name = dialog.FileName;
@@ -55,10 +61,12 @@ namespace exam.MyForm
 
         private void 导入判断题ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Multiselect = false;
-            dialog.Title = "请选择题库文件";
-            dialog.Filter = "所有文件(*.*)|*.*";
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Multiselect = false,
+                Title = "请选择题库文件",
+                Filter = "97-2003excel文件(*.xls)|*.xls"
+            };
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 string name = dialog.FileName;
@@ -143,8 +151,13 @@ namespace exam.MyForm
 
         private void 版本信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutMe from = new AboutMe();
-            from.Show();
+            if (aboutMeForm != null)
+            {
+                aboutMeForm.Close();
+            }
+            aboutMeForm = new AboutMe();
+            aboutMeForm.StartPosition = FormStartPosition.CenterScreen;
+            aboutMeForm.Show();
         }
 
         private void 单选ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -195,7 +208,13 @@ namespace exam.MyForm
 
         private void 做题统计ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (statisticsForm != null)
+            {
+                statisticsForm.Close();
+            }
+            statisticsForm = new StatisticsForm();
+            statisticsForm.StartPosition = FormStartPosition.CenterScreen;
+            statisticsForm.Show();
         }
     }
 }
