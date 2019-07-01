@@ -12,16 +12,47 @@ namespace exam.DB
     {
         public const int USER_ID = 1;
 
+        /// <summary>
+        /// 单选题
+        /// </summary>
         public const int TYPE_CHOICE = 0;
+        /// <summary>
+        /// 多选题
+        /// </summary>
         public const int TYPE_MULTIPLECHOICE = 1;
+        /// <summary>
+        /// 判断题
+        /// </summary>
         public const int TYPE_JUDGE = 2;
+        /// <summary>
+        /// 显示统计
+        /// </summary>
+        public const int TYPE_STATISTICS = 998;
+        /// <summary>
+        /// 显示题库
+        /// </summary>
         public const int TYPE_PROBLEMLIST = 999;
 
+        /// <summary>
+        /// 题目答错
+        /// </summary>
         public const int RESULT_WRONG = 0;
+        /// <summary>
+        /// 题目答对
+        /// </summary>
         public const int RESULT_RIGHT = 1;
 
+        /// <summary>
+        /// 没做，新题
+        /// </summary>
         public const int EXAM_TYPE_UNDO = 0;
+        /// <summary>
+        /// 做错
+        /// </summary>
         public const int EXAM_TYPE_WRONG = 1;
+        /// <summary>
+        /// 复习
+        /// </summary>
         public const int EXAM_TYPE_REVIEW = 2;
 
 
@@ -50,6 +81,13 @@ namespace exam.DB
             UpdateHistory(TYPE_JUDGE, judge.id, USER_ID, isRight);
         }
 
+        /// <summary>
+        /// 更新做题记录
+        /// </summary>
+        /// <param name="type">题目的类型</param>
+        /// <param name="id">题目的id</param>
+        /// <param name="userid">用户id</param>
+        /// <param name="isRight">答题是否正确</param>
         private static void UpdateHistory(int type, long id, long userid, int isRight)
         {
 
@@ -103,6 +141,12 @@ namespace exam.DB
             SQLiteHelper.ExecuteSql(sql);
         }
 
+        /// <summary>
+        /// 从数据库读取指定数量的单选题目
+        /// </summary>
+        /// <param name="examType">训练类型</param>
+        /// <param name="count">数量</param>
+        /// <returns>返回单选题列表</returns>
         public static List<Choice> LoadChoice(int examType,long count)
         {
             List<Choice> list = new List<Choice>();
@@ -136,10 +180,24 @@ namespace exam.DB
             return list;
         }
 
+        /// <summary>
+        /// 返回指定数量的多选题
+        /// </summary>
+        /// <param name="examType">训练类型</param>
+        /// <param name="count">数量</param>
+        /// <returns>多选题列表</returns>
         public static List<MultipleChoice> LoadMultipleChoice(int examType, long count)
         {
             List<MultipleChoice> list = new List<MultipleChoice>();
-            DataSet ds = LoadWrongHistory(TYPE_MULTIPLECHOICE, count);
+            DataSet ds = null;
+            if (examType == 1)
+            {
+                ds = LoadWrongHistory(TYPE_MULTIPLECHOICE, count);
+            }
+            else if (examType == 2)
+            {
+                ds = LoadReviewHistory(TYPE_MULTIPLECHOICE, count);
+            }
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new MultipleChoice
@@ -160,10 +218,24 @@ namespace exam.DB
             return list;
         }
 
+        /// <summary>
+        /// 返回指定数量的判断题
+        /// </summary>
+        /// <param name="examType">训练类型</param>
+        /// <param name="count">数量</param>
+        /// <returns>判断题列表</returns>
         public static List<Judge> LoadJudge(int examType, long count)
         {
             List<Judge> list = new List<Judge>();
-            DataSet ds = LoadWrongHistory(TYPE_JUDGE, count);
+            DataSet ds = null;
+            if (examType == 1)
+            {
+                ds = LoadWrongHistory(TYPE_JUDGE, count);
+            }
+            else if (examType == 2)
+            {
+                ds = LoadReviewHistory(TYPE_JUDGE, count);
+            }
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 list.Add(new Judge
@@ -179,7 +251,12 @@ namespace exam.DB
             return list;
         }
 
-        // 搜索指定类型的题目，错题/做题数最高的
+        /// <summary>
+        /// 搜索指定类型的题目，错题/做题数最高的
+        /// </summary>
+        /// <param name="type">训练类型</param>
+        /// <param name="count">数量</param>
+        /// <returns></returns>
         public static DataSet LoadWrongHistory(int type , long count)
         {
             string table_name = GetTableName(type);
@@ -192,7 +269,12 @@ namespace exam.DB
             return ds;
         }
 
-        // 搜索指定类型的题目，做题次数最少的题目
+        /// <summary>
+        /// 搜索指定类型的题目，做题次数最少的题目
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>        
         public static DataSet LoadReviewHistory(int type, long count)
         {
             string table_name = GetTableName(type);
@@ -205,12 +287,22 @@ namespace exam.DB
             return ds;
         }
 
+        /// <summary>
+        /// 保存题目是否已经做过
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type"></param>
         public static void SaveProblemIsDone(long id,int type)
         {
             string sql = "update " + GetTableName(type) + " set isdone = 1 where id =" + id;
             SQLiteHelper.ExecuteSql(sql);
         }
 
+        /// <summary>
+        /// 通过题目类型获得表名
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
         private static string GetTableName(int type)
         {
             string table_name = "";
@@ -227,6 +319,22 @@ namespace exam.DB
                     break;
             }
             return table_name;
+        }
+        
+        /// <summary>
+        /// 获得做题数
+        /// </summary>
+        /// <param name="type">题目类型，-1 表示所有</param>
+        /// <returns></returns>
+        public static int GetHisotryCount(int type)
+        {
+            string sql = String.Format("select count(number) from {0}", TABLE_NAME);
+            if (type != -1)
+            {
+                sql += String.Format("{0} where type = {1}", sql, type);
+            }
+            int count = (int)SQLiteHelper.GetSingle(sql);
+            return count;
         }
     }
 }
