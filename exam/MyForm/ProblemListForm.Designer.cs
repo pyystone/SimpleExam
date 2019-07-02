@@ -1,6 +1,6 @@
 ﻿namespace exam.MyForm
 {
-    partial class ProblemListForm
+    partial class 题库
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProblemListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(题库));
             this.problemListView = new System.Windows.Forms.ListView();
             this.problemtype = new System.Windows.Forms.ComboBox();
             this.type = new System.Windows.Forms.ComboBox();
@@ -81,7 +81,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ProblemListForm
+            // 题库
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,7 +93,7 @@
             this.Controls.Add(this.problemListView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ProblemListForm";
+            this.Name = "题库";
             this.Text = "ProblemListForm";
             this.Load += new System.EventHandler(this.ProblemListForm_Load);
             this.ResumeLayout(false);

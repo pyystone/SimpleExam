@@ -47,8 +47,8 @@
             this.导入多选题ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导入判断题ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查看题库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.版本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.做题统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.版本信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,7 @@
             this.查看题库ToolStripMenuItem,
             this.做题统计ToolStripMenuItem,
             this.版本信息ToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1724, 25);
@@ -76,27 +77,27 @@
             this.判断ToolStripMenuItem});
             this.开始训练ToolStripMenuItem.Name = "开始训练ToolStripMenuItem";
             this.开始训练ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.开始训练ToolStripMenuItem.Text = "开始训练";
+            this.开始训练ToolStripMenuItem.Text = "新题训练";
             this.开始训练ToolStripMenuItem.Click += new System.EventHandler(this.开始训练ToolStripMenuItem_Click);
             // 
             // 单选ToolStripMenuItem
             // 
             this.单选ToolStripMenuItem.Name = "单选ToolStripMenuItem";
-            this.单选ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.单选ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.单选ToolStripMenuItem.Text = "单选";
             this.单选ToolStripMenuItem.Click += new System.EventHandler(this.单选ToolStripMenuItem_Click);
             // 
             // 多选ToolStripMenuItem
             // 
             this.多选ToolStripMenuItem.Name = "多选ToolStripMenuItem";
-            this.多选ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.多选ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.多选ToolStripMenuItem.Text = "多选";
             this.多选ToolStripMenuItem.Click += new System.EventHandler(this.多选ToolStripMenuItem_Click);
             // 
             // 判断ToolStripMenuItem
             // 
             this.判断ToolStripMenuItem.Name = "判断ToolStripMenuItem";
-            this.判断ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.判断ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.判断ToolStripMenuItem.Text = "判断";
             this.判断ToolStripMenuItem.Click += new System.EventHandler(this.判断ToolStripMenuItem_Click);
             // 
@@ -113,21 +114,21 @@
             // 单选ToolStripMenuItem1
             // 
             this.单选ToolStripMenuItem1.Name = "单选ToolStripMenuItem1";
-            this.单选ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.单选ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.单选ToolStripMenuItem1.Text = "单选";
             this.单选ToolStripMenuItem1.Click += new System.EventHandler(this.单选ToolStripMenuItem1_Click);
             // 
             // 多选ToolStripMenuItem1
             // 
             this.多选ToolStripMenuItem1.Name = "多选ToolStripMenuItem1";
-            this.多选ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.多选ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.多选ToolStripMenuItem1.Text = "多选";
             this.多选ToolStripMenuItem1.Click += new System.EventHandler(this.多选ToolStripMenuItem1_Click);
             // 
             // 判断ToolStripMenuItem1
             // 
             this.判断ToolStripMenuItem1.Name = "判断ToolStripMenuItem1";
-            this.判断ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.判断ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.判断ToolStripMenuItem1.Text = "判断";
             this.判断ToolStripMenuItem1.Click += new System.EventHandler(this.判断ToolStripMenuItem1_Click);
             // 
@@ -144,21 +145,21 @@
             // 单选ToolStripMenuItem2
             // 
             this.单选ToolStripMenuItem2.Name = "单选ToolStripMenuItem2";
-            this.单选ToolStripMenuItem2.Size = new System.Drawing.Size(100, 22);
+            this.单选ToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.单选ToolStripMenuItem2.Text = "单选";
             this.单选ToolStripMenuItem2.Click += new System.EventHandler(this.单选ToolStripMenuItem2_Click);
             // 
             // 多选ToolStripMenuItem2
             // 
             this.多选ToolStripMenuItem2.Name = "多选ToolStripMenuItem2";
-            this.多选ToolStripMenuItem2.Size = new System.Drawing.Size(100, 22);
+            this.多选ToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.多选ToolStripMenuItem2.Text = "多选";
             this.多选ToolStripMenuItem2.Click += new System.EventHandler(this.多选ToolStripMenuItem2_Click);
             // 
             // 判断ToolStripMenuItem2
             // 
             this.判断ToolStripMenuItem2.Name = "判断ToolStripMenuItem2";
-            this.判断ToolStripMenuItem2.Size = new System.Drawing.Size(100, 22);
+            this.判断ToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.判断ToolStripMenuItem2.Text = "判断";
             this.判断ToolStripMenuItem2.Click += new System.EventHandler(this.判断ToolStripMenuItem2_Click);
             // 
@@ -175,21 +176,21 @@
             // 导入单选题ToolStripMenuItem
             // 
             this.导入单选题ToolStripMenuItem.Name = "导入单选题ToolStripMenuItem";
-            this.导入单选题ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.导入单选题ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.导入单选题ToolStripMenuItem.Text = "导入单选题";
             this.导入单选题ToolStripMenuItem.Click += new System.EventHandler(this.导入单选题ToolStripMenuItem_Click);
             // 
             // 导入多选题ToolStripMenuItem
             // 
             this.导入多选题ToolStripMenuItem.Name = "导入多选题ToolStripMenuItem";
-            this.导入多选题ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.导入多选题ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.导入多选题ToolStripMenuItem.Text = "导入多选题";
             this.导入多选题ToolStripMenuItem.Click += new System.EventHandler(this.导入多选题ToolStripMenuItem_Click);
             // 
             // 导入判断题ToolStripMenuItem
             // 
             this.导入判断题ToolStripMenuItem.Name = "导入判断题ToolStripMenuItem";
-            this.导入判断题ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.导入判断题ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.导入判断题ToolStripMenuItem.Text = "导入判断题";
             this.导入判断题ToolStripMenuItem.Click += new System.EventHandler(this.导入判断题ToolStripMenuItem_Click);
             // 
@@ -200,19 +201,19 @@
             this.查看题库ToolStripMenuItem.Text = "查看题库";
             this.查看题库ToolStripMenuItem.Click += new System.EventHandler(this.查看题库ToolStripMenuItem_Click);
             // 
-            // 版本信息ToolStripMenuItem
-            // 
-            this.版本信息ToolStripMenuItem.Name = "版本信息ToolStripMenuItem";
-            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.版本信息ToolStripMenuItem.Text = "版本信息";
-            this.版本信息ToolStripMenuItem.Click += new System.EventHandler(this.版本信息ToolStripMenuItem_Click);
-            // 
             // 做题统计ToolStripMenuItem
             // 
             this.做题统计ToolStripMenuItem.Name = "做题统计ToolStripMenuItem";
             this.做题统计ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.做题统计ToolStripMenuItem.Text = "做题统计";
             this.做题统计ToolStripMenuItem.Click += new System.EventHandler(this.做题统计ToolStripMenuItem_Click);
+            // 
+            // 版本信息ToolStripMenuItem
+            // 
+            this.版本信息ToolStripMenuItem.Name = "版本信息ToolStripMenuItem";
+            this.版本信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.版本信息ToolStripMenuItem.Text = "版本信息";
+            this.版本信息ToolStripMenuItem.Click += new System.EventHandler(this.版本信息ToolStripMenuItem_Click);
             // 
             // MainForm
             // 

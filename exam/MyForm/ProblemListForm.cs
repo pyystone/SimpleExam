@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace exam.MyForm
 {
-    public partial class ProblemListForm : Form
+    public partial class 题库 : Form
     {
         private int problemKind = QuestionHistory.TYPE_CHOICE;
         private int typeId = 0;
@@ -98,7 +98,7 @@ namespace exam.MyForm
             , HorizontalAlignment.Center
         };
 
-        public ProblemListForm()
+        public 题库()
         {
             InitializeComponent();
         }
