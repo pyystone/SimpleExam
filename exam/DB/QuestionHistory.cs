@@ -259,12 +259,13 @@ namespace exam.DB
         /// <returns></returns>
         public static DataSet LoadWrongHistory(int type , long count)
         {
+            long nowTime = Util.GetTimeStamp();
             string table_name = GetTableName(type);
             string sql = String.Format("select * from {0} as a" +
                 " left join {1} as b on a.problem_id = b.id" +
                 " left join {2} as c on c.id = b.typeid" +
-                " where type = {3} and error_times > 0 order by error_times*1.0/number desc limit {4}" 
-                ,TABLE_NAME, table_name, ProblemType.TABLE_NAME, type, count);
+                " where type = {3} and {4} - lastTime > 5*60*1000 and error_times > 0 order by error_times*1.0/number desc limit {5}" 
+                ,TABLE_NAME, table_name, ProblemType.TABLE_NAME, type, nowTime , count);
             DataSet ds = SQLiteHelper.Query(sql);
             return ds;
         }
@@ -277,12 +278,13 @@ namespace exam.DB
         /// <returns></returns>        
         public static DataSet LoadReviewHistory(int type, long count)
         {
+            long nowTime = Util.GetTimeStamp();
             string table_name = GetTableName(type);
             string sql = String.Format("select * from {0} as a" +
                 " left join {1} as b on a.problem_id = b.id" +
                 " left join {2} as c on c.id = b.typeid" +
-                " where type = {3} order by number limit {4}"
-                , TABLE_NAME, table_name, ProblemType.TABLE_NAME, type, count);
+                " where type = {3} and {4} - lastTime > 5*60*1000 order by number limit {5}"
+                , TABLE_NAME, table_name, ProblemType.TABLE_NAME, type, nowTime, count);
             DataSet ds = SQLiteHelper.Query(sql);
             return ds;
         }
