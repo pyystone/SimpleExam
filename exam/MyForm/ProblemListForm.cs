@@ -16,12 +16,87 @@ namespace exam.MyForm
         private int problemKind = QuestionHistory.TYPE_CHOICE;
         private int typeId = 0;
         
-        private string[] problemKindList;
+        private static readonly string[] problemKindList = new string[]
+        {
+            "单选","多选","判断"
+        };
+
         private List<ProblemType> typeList;
 
         private ProblemType selectType;
 
         private List<object> problemList = new List<object>();
+        
+        private static readonly List<string> choiceColumns = new List<string>
+        {
+            "题目id","题目内容","答案A","答案B","答案C"
+            ,"答案D","正确答案","是否做过","问题类型"
+        };
+
+        private static readonly List<string> multipleChoiceColumns = new List<string>
+        {
+            "题目id","题目内容","答案A","答案B","答案C"
+            ,"答案D","正确答案","是否做过","问题类型"
+        };
+
+        private static readonly List<string> judgeColumns = new List<string>
+        {
+            "题目id","题目内容","正确答案","是否做过","问题类型",
+        };
+
+        private static readonly List<int> choiceColumnsWidth = new List<int>
+        {
+            5,22,14,14,14
+            ,14,5,5,5
+        };
+
+
+        private static readonly List<int> multipleChoiceColumnsWidth = new List<int>
+        {
+            5,22,14,14,14
+            ,14,5,5,5
+        };
+
+        
+        private static readonly List<int> judgeColumnsWidth = new List<int>
+        {
+            10,45,10,10,10
+        };
+
+        private static readonly List<HorizontalAlignment> choiceColumnsTextAligns = new List<HorizontalAlignment>
+        {
+            HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Center
+            , HorizontalAlignment.Center
+            , HorizontalAlignment.Center
+        };
+
+        private static readonly List<HorizontalAlignment> multipleChoiceColumnsTextAligns = new List<HorizontalAlignment>
+        {
+            HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Center
+            , HorizontalAlignment.Center
+            , HorizontalAlignment.Center
+        };
+
+        private static readonly List<HorizontalAlignment> judgeColumnsTextAligns = new List<HorizontalAlignment>
+        {
+            HorizontalAlignment.Left
+            ,HorizontalAlignment.Left
+            ,HorizontalAlignment.Center
+            , HorizontalAlignment.Center
+            , HorizontalAlignment.Center
+        };
 
         public ProblemListForm()
         {
@@ -60,10 +135,6 @@ namespace exam.MyForm
 
         private void InitData()
         {
-            problemKindList = new string[]
-            {
-                "单选","多选","判断"
-            };
             typeList = ProblemType.GetProblemTypeList();
 
             problemtype.Items.Clear();
@@ -109,23 +180,23 @@ namespace exam.MyForm
 
         }
 
-        private void ShowChoice()
+        private void InitProblemListViewColumns(List<string> columns , List<int> widths , List<HorizontalAlignment> textAligns)
         {
             problemListView.Columns.Clear();
-            problemListView.Items.Clear();
             int width = problemListView.Width;
+            for (int i = 0; i < columns.Count; i ++)
+            {
+                problemListView.Columns.Add(columns[i], width * widths[i] / 100, textAligns[i]);
+            }
+        }
+
+        private void ShowChoice()
+        {
 
             this.problemListView.BeginUpdate();
-            problemListView.Columns.Add("题目id", width * 5 / 100);
-            problemListView.Columns.Add("题目内容", width * 20 / 100);
-            problemListView.Columns.Add("答案A", width * 14 / 100);
-            problemListView.Columns.Add("答案B", width * 14 / 100);
-            problemListView.Columns.Add("答案C", width * 14 / 100);
-            problemListView.Columns.Add("答案D", width * 14 / 100);
-            problemListView.Columns.Add("正确答案", width * 5 / 100);
-            problemListView.Columns.Add("是否做过", width * 5 / 100);
-            problemListView.Columns.Add("问题类型", width * 5 / 100);
+            InitProblemListViewColumns(choiceColumns,choiceColumnsWidth,choiceColumnsTextAligns);
 
+            problemListView.Items.Clear();
             for (int i = 0; i < problemList.Count; i ++)
             {
                 ListViewItem item = new ListViewItem();
@@ -149,22 +220,11 @@ namespace exam.MyForm
 
         private void ShowMultipleChoice()
         {
-
-            problemListView.Columns.Clear();
-            problemListView.Items.Clear();
-            int width = problemListView.Width;
-
+            
             this.problemListView.BeginUpdate();
-            problemListView.Columns.Add("题目id", width * 5 / 100);
-            problemListView.Columns.Add("题目内容", width * 20 / 100);
-            problemListView.Columns.Add("答案A", width * 14 / 100);
-            problemListView.Columns.Add("答案B", width * 14 / 100);
-            problemListView.Columns.Add("答案C", width * 14 / 100);
-            problemListView.Columns.Add("答案D", width * 14 / 100);
-            problemListView.Columns.Add("正确答案", width * 5 / 100);
-            problemListView.Columns.Add("是否做过", width * 5 / 100);
-            problemListView.Columns.Add("问题类型", width * 5 / 100);
+            InitProblemListViewColumns(multipleChoiceColumns, multipleChoiceColumnsWidth, multipleChoiceColumnsTextAligns);
 
+            problemListView.Items.Clear();
             for (int i = 0; i < problemList.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
@@ -189,17 +249,10 @@ namespace exam.MyForm
         private void ShowJudge()
         {
 
-            problemListView.Columns.Clear();
-            problemListView.Items.Clear();
-            int width = problemListView.Width;
-
             this.problemListView.BeginUpdate();
-            problemListView.Columns.Add("题目id", width * 10 / 100);
-            problemListView.Columns.Add("题目内容", width * 45 / 100);
-            problemListView.Columns.Add("正确答案", width * 10 / 100);
-            problemListView.Columns.Add("是否做过", width * 10 / 100);
-            problemListView.Columns.Add("问题类型", width * 10 / 100);
+            InitProblemListViewColumns(judgeColumns, judgeColumnsWidth, judgeColumnsTextAligns);
 
+            problemListView.Items.Clear();
             for (int i = 0; i < problemList.Count; i++)
             {
                 ListViewItem item = new ListViewItem();
