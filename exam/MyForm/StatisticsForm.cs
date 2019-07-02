@@ -20,11 +20,11 @@ namespace exam.MyForm
 
         public static readonly List<int> widths = new List<int>
         {
-            40,30,30
+            50,25,25
         };
         public static readonly List<HorizontalAlignment> textAligns = new List<HorizontalAlignment>
         {
-            HorizontalAlignment.Left,HorizontalAlignment.Right,HorizontalAlignment.Right
+            HorizontalAlignment.Left,HorizontalAlignment.Center,HorizontalAlignment.Center
         };
 
 
