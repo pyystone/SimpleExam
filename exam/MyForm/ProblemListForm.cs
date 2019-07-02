@@ -79,8 +79,10 @@ namespace exam.MyForm
             type.SelectedIndex = 0;
 
 
-            ImageList imgList = new ImageList();
-            imgList.ImageSize = new Size(1, 70);
+            ImageList imgList = new ImageList
+            {
+                ImageSize = new Size(1, 70)
+            };
             problemListView.SmallImageList = imgList;
         }
 
@@ -115,7 +117,7 @@ namespace exam.MyForm
 
             this.problemListView.BeginUpdate();
             problemListView.Columns.Add("题目id", width * 5 / 100);
-            problemListView.Columns.Add("题目内容", width * 24 / 100);
+            problemListView.Columns.Add("题目内容", width * 20 / 100);
             problemListView.Columns.Add("答案A", width * 14 / 100);
             problemListView.Columns.Add("答案B", width * 14 / 100);
             problemListView.Columns.Add("答案C", width * 14 / 100);
@@ -148,11 +150,71 @@ namespace exam.MyForm
         private void ShowMultipleChoice()
         {
 
+            problemListView.Columns.Clear();
+            problemListView.Items.Clear();
+            int width = problemListView.Width;
+
+            this.problemListView.BeginUpdate();
+            problemListView.Columns.Add("题目id", width * 5 / 100);
+            problemListView.Columns.Add("题目内容", width * 20 / 100);
+            problemListView.Columns.Add("答案A", width * 14 / 100);
+            problemListView.Columns.Add("答案B", width * 14 / 100);
+            problemListView.Columns.Add("答案C", width * 14 / 100);
+            problemListView.Columns.Add("答案D", width * 14 / 100);
+            problemListView.Columns.Add("正确答案", width * 5 / 100);
+            problemListView.Columns.Add("是否做过", width * 5 / 100);
+            problemListView.Columns.Add("问题类型", width * 5 / 100);
+
+            for (int i = 0; i < problemList.Count; i++)
+            {
+                ListViewItem item = new ListViewItem();
+
+                MultipleChoice choice = (MultipleChoice)problemList[i];
+
+                item.Text = choice.id.ToString();
+                item.SubItems.Add(choice.content);
+                item.SubItems.Add(choice.aska);
+                item.SubItems.Add(choice.askb);
+                item.SubItems.Add(choice.askc);
+                item.SubItems.Add(choice.askd);
+                item.SubItems.Add(choice.ans);
+                item.SubItems.Add(choice.isDone == 0 ? "否" : "是");
+                item.SubItems.Add(choice.typeName);
+
+                problemListView.Items.Add(item);
+            }
+            this.problemListView.EndUpdate();
         }
 
         private void ShowJudge()
         {
 
+            problemListView.Columns.Clear();
+            problemListView.Items.Clear();
+            int width = problemListView.Width;
+
+            this.problemListView.BeginUpdate();
+            problemListView.Columns.Add("题目id", width * 10 / 100);
+            problemListView.Columns.Add("题目内容", width * 45 / 100);
+            problemListView.Columns.Add("正确答案", width * 10 / 100);
+            problemListView.Columns.Add("是否做过", width * 10 / 100);
+            problemListView.Columns.Add("问题类型", width * 10 / 100);
+
+            for (int i = 0; i < problemList.Count; i++)
+            {
+                ListViewItem item = new ListViewItem();
+
+                Judge judge = (Judge)problemList[i];
+
+                item.Text = judge.id.ToString();
+                item.SubItems.Add(judge.content);
+                item.SubItems.Add(judge.ans == Judge.RIGHT ? "正确" : "错误");
+                item.SubItems.Add(judge.isDone == 0 ? "否" : "是");
+                item.SubItems.Add(judge.typeName);
+
+                problemListView.Items.Add(item);
+            }
+            this.problemListView.EndUpdate();
         }
 
         private void ProblemListForm_Load(object sender, EventArgs e)
