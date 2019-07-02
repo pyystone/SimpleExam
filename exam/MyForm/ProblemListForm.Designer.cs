@@ -32,6 +32,7 @@
             this.problemListView = new System.Windows.Forms.ListView();
             this.problemtype = new System.Windows.Forms.ComboBox();
             this.type = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // problemListView
@@ -46,6 +47,7 @@
             this.problemListView.TabIndex = 0;
             this.problemListView.UseCompatibleStateImageBehavior = false;
             this.problemListView.View = System.Windows.Forms.View.Details;
+            this.problemListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.problemListView_MouseDoubleClick);
             // 
             // problemtype
             // 
@@ -69,12 +71,23 @@
             this.type.TabIndex = 2;
             this.type.SelectedIndexChanged += new System.EventHandler(this.type_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(398, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "双击单元格可以复制内容";
+            // 
             // ProblemListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(1557, 847);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.type);
             this.Controls.Add(this.problemtype);
             this.Controls.Add(this.problemListView);
@@ -84,6 +97,7 @@
             this.Text = "查询题库";
             this.Load += new System.EventHandler(this.ProblemListForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,5 +106,6 @@
         private System.Windows.Forms.ListView problemListView;
         private System.Windows.Forms.ComboBox problemtype;
         private System.Windows.Forms.ComboBox type;
+        private System.Windows.Forms.Label label1;
     }
 }

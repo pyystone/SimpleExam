@@ -304,5 +304,22 @@ namespace exam.MyForm
             }
             ShowProblemData();
         }
+
+        private void problemListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            ListView listview = (ListView)sender;
+            ListViewItem lstrow = listview.GetItemAt(e.X, e.Y);
+            System.Windows.Forms.ListViewItem.ListViewSubItem lstcol = lstrow.GetSubItemAt(e.X, e.Y);
+            string strText = lstcol.Text;
+            try
+            {
+                Clipboard.SetDataObject(strText);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
     }
 }
