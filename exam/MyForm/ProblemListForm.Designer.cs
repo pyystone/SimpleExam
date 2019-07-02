@@ -1,6 +1,6 @@
 ﻿namespace exam.MyForm
 {
-    partial class 题库
+    partial class ProblemListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(题库));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProblemListForm));
             this.problemListView = new System.Windows.Forms.ListView();
             this.problemtype = new System.Windows.Forms.ComboBox();
             this.type = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // problemListView
@@ -70,31 +69,19 @@
             this.type.TabIndex = 2;
             this.type.SelectedIndexChanged += new System.EventHandler(this.type_SelectedIndexChanged);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(401, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "查询";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // 题库
+            // ProblemListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGreen;
             this.ClientSize = new System.Drawing.Size(1557, 847);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.type);
             this.Controls.Add(this.problemtype);
             this.Controls.Add(this.problemListView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "题库";
-            this.Text = "ProblemListForm";
+            this.Name = "ProblemListForm";
+            this.Text = "查询题库";
             this.Load += new System.EventHandler(this.ProblemListForm_Load);
             this.ResumeLayout(false);
 
@@ -105,6 +92,5 @@
         private System.Windows.Forms.ListView problemListView;
         private System.Windows.Forms.ComboBox problemtype;
         private System.Windows.Forms.ComboBox type;
-        private System.Windows.Forms.Button button1;
     }
 }

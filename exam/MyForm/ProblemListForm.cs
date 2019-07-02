@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace exam.MyForm
 {
-    public partial class 题库 : Form
+    public partial class ProblemListForm : Form
     {
         private int problemKind = QuestionHistory.TYPE_CHOICE;
         private int typeId = 0;
@@ -98,7 +98,7 @@ namespace exam.MyForm
             , HorizontalAlignment.Center
         };
 
-        public 题库()
+        public ProblemListForm()
         {
             InitializeComponent();
         }
@@ -289,6 +289,7 @@ namespace exam.MyForm
                     problemKind = QuestionHistory.TYPE_JUDGE;
                     break;
             }
+            ShowProblemData();
         }
 
         private void type_SelectedIndexChanged(object sender, EventArgs e)
@@ -301,6 +302,7 @@ namespace exam.MyForm
             {
                 selectType = typeList[index-1];
             }
+            ShowProblemData();
         }
     }
 }
