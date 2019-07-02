@@ -50,6 +50,7 @@
             // 
             // problemtype
             // 
+            this.problemtype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.problemtype.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.problemtype.FormattingEnabled = true;
             this.problemtype.Location = new System.Drawing.Point(49, 25);
@@ -60,6 +61,7 @@
             // 
             // type
             // 
+            this.type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.type.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.type.FormattingEnabled = true;
             this.type.Location = new System.Drawing.Point(218, 25);
